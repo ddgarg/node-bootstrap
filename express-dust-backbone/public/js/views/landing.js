@@ -1,13 +1,13 @@
 define([
-	'jquery', 
-	'backbone',
-	'../../jsdust/landing'
+	"jquery", 
+	"backbone",
+	"../../jsdust/landing"
 	], 
 	function($, Backbone, template){
 	
 		var View = Backbone.View.extend({
 		
-			el: '#landing',
+			el: "#landing",
 		
 			render: function(json) { }
 		});

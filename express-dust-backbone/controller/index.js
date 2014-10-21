@@ -1,25 +1,27 @@
-var util = require('../lib/util.js');
+var util = require("../lib/util.js");
 
 module.exports = function(app) {
               
-	app.get('/', function(req, res) {
+	app.get("/", function(req, res) {
 
 		var json = {
 			viewName: "landing",
-			baseTemplate: 'base',
+			baseTemplate: "base",
 			data: {			
+				// add page level stuff here
 			}
 		};
 
 		util.respond(req, res, json);
 	});
        
-	app.get('/about', function(req, res) {
+	app.get("/about", function(req, res) {
 
 		var json = {
 			viewName: "about",
-			baseTemplate: 'base',
-			data: {			
+			baseTemplate: "base",
+			data: {
+				// add page level stuff here
 			}
 		};
 

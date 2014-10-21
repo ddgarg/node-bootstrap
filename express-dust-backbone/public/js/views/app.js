@@ -1,15 +1,15 @@
 define([
-	'jquery',
-	'backbone'
+	"jquery",
+	"backbone"
 ], function($, Backbone) {
 	var AppView = Backbone.View.extend({
 
-		el: $('body'),
+		el: $("body"),
 
 		events: {
-			'submit form.proceed': 'proceedForm',
-			'click input.submit': 'proceedForm',
-			'click a.proceed': 'proceedLink',
+			"submit form.proceed": "proceedForm",
+			"click input.submit": "proceedForm",
+			"click a.proceed": "proceedLink",
 		},
 
 		initialize: function() {},
@@ -37,10 +37,10 @@ define([
 		showPage: function(json, backbone) {
 			var that = this;
 
-			require(['views/' + json.viewName], function (View) {
+			require(["views/" + json.viewName], function (View) {
 				var pageView = new View(json);
 
-				dust.render('public/templates/' + json.viewName + '.dust', json, function(err, out) {
+				dust.render("public/templates/" + json.viewName + ".dust", json, function(err, out) {
 					document.getElementById("content").innerHTML = out;
 				});
 

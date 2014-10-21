@@ -13,3 +13,9 @@ basic-express-app/.idea/*.*
 basic-express-app/nohup.out
 
 
+express-dust-backbone/node_modules/
+express-dust-backbone/npm-debug.log
+express-dust-backbone/log.txt
+express-dust-backbone/.idea/
+express-dust-backbone/.idea/*.*
+express-dust-backbone/nohup.out

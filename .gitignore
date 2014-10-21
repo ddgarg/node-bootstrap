@@ -1,0 +1,15 @@
+node_modules/
+npm-debug.log
+log.txt
+.idea/
+.idea/*.*
+nohup.out
+
+basic-express-app/node_modules/
+basic-express-app/npm-debug.log
+basic-express-app/log.txt
+basic-express-app/.idea/
+basic-express-app/.idea/*.*
+basic-express-app/nohup.out
+
+

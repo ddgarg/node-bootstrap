@@ -19,3 +19,10 @@ express-dust-backbone/log.txt
 express-dust-backbone/.idea/
 express-dust-backbone/.idea/*.*
 express-dust-backbone/nohup.out
+
+basic-node-app/node_modules/
+basic-node-app/npm-debug.log
+basic-node-app/log.txt
+basic-node-app/.idea/
+basic-node-app/.idea/*.*
+basic-node-app/nohup.out

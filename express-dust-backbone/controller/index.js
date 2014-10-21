@@ -1,3 +1,5 @@
+var util = require('../lib/util.js');
+
 module.exports = function(app) {
               
 	app.get('/', function(req, res) {
@@ -9,17 +11,18 @@ module.exports = function(app) {
 			}
 		};
 
-		if(req.header('X-Requested-With') == 'XMLHttpRequest') {
-			res.writeHead(200, { 'Content-Type': 'application/json' });
-			res.write(JSON.stringify(json));
-			res.end();
-		}
-		else {
-			res.render("public/templates/" + json.baseTemplate,json);
-		}
-
+		util.respond(req, res, json);
 	});
+       
+	app.get('/about', function(req, res) {
 
+		var json = {
+			viewName: "about",
+			baseTemplate: 'base',
+			data: {			
+			}
+		};
+
+		util.respond(req, res, json);
+	});
 }
-
-

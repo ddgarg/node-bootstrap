@@ -1,14 +1,7 @@
-module.exports = function(app) {
-       
-	app.get('/about', function(req, res) {
+module.exports = {
 
-		var json = {
-			viewName: "about",
-			baseTemplate: 'base',
-			data: {			
-			}
-		};
-
+	// responds with HTML or JSON depening on ajax or non-ajax request
+	respond: function (req, res, json) {
 		if(req.header('X-Requested-With') == 'XMLHttpRequest') {
 			res.writeHead(200, { 'Content-Type': 'application/json' });
 			res.write(JSON.stringify(json));
@@ -17,7 +10,5 @@ module.exports = function(app) {
 		else {
 			res.render("public/templates/" + json.baseTemplate,json);
 		}
-		
-	});
-
+	}
 }

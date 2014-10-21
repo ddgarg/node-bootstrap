@@ -13,7 +13,6 @@
 			<div class="row-fluid">
 
 				<div id="content" class="span9">
-					{>"public/templates/{viewName}.dust"/}
 				</div>
 			</div>
 		</div>
@@ -22,5 +21,11 @@
 
 		<script src="js/lib/dust-core-1.0.0.js"></script>
 		<script data-main="js/main" src="js/lib/require.js"></script>
+		{?viewName}
+			<script type="text/javascript">
+				var App = App || {};
+				App.initialPageName = "{viewName}";
+			</script>
+		{/viewName}
 	</body>
 </html>

@@ -24,3 +24,8 @@ polyfills
 
 to think about:
 add a promise engine like async/q/step
+
+
+customization options
+single vs double quotes
+tabs vs spaces

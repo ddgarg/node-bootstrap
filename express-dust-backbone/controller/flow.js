@@ -5,11 +5,8 @@ module.exports = function(app) {
 	app.get("/", function(req, res) {
 
 		var json = {
-			viewName: "landing",
 			baseTemplate: "base",
-			data: {			
-				// add page level stuff here
-			}
+			viewName: "landing"
 		};
 
 		util.respond(req, res, json);
@@ -19,10 +16,17 @@ module.exports = function(app) {
 
 		var json = {
 			viewName: "about",
-			baseTemplate: "base",
-			data: {
-				// add page level stuff here
-			}
+			baseTemplate: "base"
+		};
+
+		util.respond(req, res, json);
+	});
+
+	app.get("/landing", function(req, res) {
+
+		var json = {
+			viewName: "landing",
+			baseTemplate: "base"
 		};
 
 		util.respond(req, res, json);

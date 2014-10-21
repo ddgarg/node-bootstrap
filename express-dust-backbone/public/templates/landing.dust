@@ -1,3 +1,8 @@
 <section id="landing">
+<h1>Hello, welcome to {appName}</h1>
+
+<p>Input box bound to model: </p>
+<input type="text" value="{appName}" id="appName" />
+<input type="button" id="update" value="Update" />
 
 </section>

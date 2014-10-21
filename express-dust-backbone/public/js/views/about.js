@@ -1,15 +1,29 @@
 define([
 	"jquery", 
 	"backbone",
-	"../../jsdust/about"
+	"util",
+	"../models/about",
 	], 
-	function($, Backbone, template){
+	function($, Backbone, Util, Model){
 	
 		var View = Backbone.View.extend({
 		
 			el: "#about",
-		
-			render: function(json) {}
+
+			initialize: function () {
+				this.model = new Model();
+				this.model.fetch();
+			},
+
+			render: function () {
+				var that = this;
+
+				Util.dustRender(this.$el.attr("id"), this.model, this.$el);
+
+				this.model.on("change", function() {
+					that.render.apply(that);
+				});
+			}
 		});
 		
 		return View;

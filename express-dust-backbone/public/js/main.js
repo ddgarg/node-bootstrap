@@ -2,7 +2,8 @@ require.config({
 	paths: {
 		jquery: "lib/jquery-min",
 		underscore: "lib/underscore-min",
-		backbone: "lib/backbone-optamd3-min"
+		backbone: "lib/backbone-optamd3-min",
+		util: "core/util"
 	}
 });
 

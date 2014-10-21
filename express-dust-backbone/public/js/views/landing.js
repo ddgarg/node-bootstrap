@@ -1,18 +1,39 @@
 define([
 	"jquery", 
 	"backbone",
-	"../../jsdust/landing"
+	"util",
+	"../models/landing",
 	], 
-	function($, Backbone, template){
+	function($, Backbone, Util, Model){
 	
 		var View = Backbone.View.extend({
 		
 			el: "#landing",
-		
-			render: function(json) { }
+
+			events: {
+				"click #update": "updateModel"
+			},
+
+			initialize: function () {
+				this.model = new Model();
+				this.model.fetch();
+			},
+
+			render: function () {
+				var that = this;
+
+				Util.dustRender(this.$el.attr("id"), this.model, this.$el);
+
+				this.model.on("change", function() {
+					that.render.apply(that);
+				});
+			},
+
+			updateModel: function (event) {
+				this.model.setModel("appName", this.$("#appName").val());
+			}
 		});
 		
 		return View;
-	
 	}
 );

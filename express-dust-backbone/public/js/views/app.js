@@ -1,7 +1,8 @@
 define([
 	"jquery",
-	"backbone"
-], function($, Backbone) {
+	"backbone",
+	"util"
+], function($, Backbone, Util) {
 	var AppView = Backbone.View.extend({
 
 		el: $("body"),
@@ -14,7 +15,14 @@ define([
 
 		initialize: function() {},
 
-		render: function() {},
+		render: function() {
+			if (typeof App !== "undefined" && App.initialPageName) {
+				this.showPage({
+					viewName: App.initialPageName,
+					base: "base"
+				});				
+			}
+		},
 
 		proceedForm: function(e) {
 			var that = this;
@@ -38,14 +46,14 @@ define([
 			var that = this;
 
 			require(["views/" + json.viewName], function (View) {
-				var pageView = new View(json);
 
-				dust.render("public/templates/" + json.viewName + ".dust", json, function(err, out) {
-					document.getElementById("content").innerHTML = out;
-				});
+				Util.dustRender(json.viewName, json, $("#content"));
 
-				that.currentView = new View();
-				that.currentView.render();
+				var pageView = new View();
+
+				if (pageView.render) {
+					pageView.render();
+				}
 			});
 		},
 

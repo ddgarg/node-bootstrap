@@ -30,7 +30,7 @@ define([
 			},
 
 			updateModel: function (event) {
-				this.model.setModel("appName", this.$("#appName").val());
+				this.model.set("appName", this.$("#appName").val());
 			}
 		});
 		
